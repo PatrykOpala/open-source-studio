@@ -1,0 +1,91 @@
+
+.advancedMenuContainer{
+  display: grid;
+  background-color: red;
+  margin: 0;
+}
+
+.buttonsWriper{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 0px;
+}
+
+.advancedMenuContainer .windowButton{
+  border:none;
+  width: 26px;
+  height:24px;
+  margin-right:13px;
+  border-radius:2px;
+  background-color:transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.advancedMenuContainer .windowButton .icon{
+  stroke: var(--icon-color);
+}
+.advancedMenuContainer .windowButton:hover{
+  background-color:var(--hover-color);
+}
+
+.tabs-container::-webkit-scrollbar{
+  height: 0.2em;
+}
+
+.tabs-container::-webkit-scrollbar-thumb{
+  background-color: green;
+}
+
+.tab-close{
+  stroke: #444444;
+}
+
+.tabs{
+  max-width:265px;
+  font-size: 13px;
+  background-color:pink;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 10% 80% 10%;
+  border-right: 1px solid #f0f0f0;
+}
+
+/* header nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 10px 20px;
+  padding-left: 10px;
+}
+
+header nav .left-block span{
+  font-size: 1.2rem;
+}
+
+header nav .right-block button{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  background-position: center;
+  text-align: center;
+  font-size: 0.9rem;
+  border: 1px solid transparent;
+  background-color: transparent;
+  transition: background-color 0.2s linear, color 0.2s linear;
+}
+
+header nav .right-block button:hover{
+  background-color: hsl(0, 0%, 87%);
+  color: hsl(0, 0%, 100%);
+}
+
+header nav .right-block .close:hover{
+  background-color: hsl(0, 95%, 50%);
+} */
