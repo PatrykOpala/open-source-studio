@@ -11,9 +11,7 @@ export class Tabs{
     tabText.style["text-align"] = "center";
 
     const closeTabButton = document.createElement("button");
-    closeTabButton.style["width"] = "20px";
-    closeTabButton.style["height"] = "20px";
-    closeTabButton.style["margin-right"] = "-40px";
+    closeTabButton.classList.add("close-tab-button");
     closeTabButton.innerHTML = `
     <svg width='17' height='17' viewBox='0 0.9 23 23' style="margin-left: -5px;">
       <line x1='4' x2='16' y1='5' y2='16' class='tab-close' stroke-width='1' />

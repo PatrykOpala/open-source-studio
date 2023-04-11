@@ -1,24 +1,29 @@
-
 .advancedMenuContainer{
+  width: 100%;
   display: grid;
-  background-color: red;
+  background-color: var(--primary-color);
   margin: 0;
+  grid-template-columns: 85vw 1fr;
+  justify-items: end;
 }
-
+.mag{
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  width: 240px;
+}
 .buttonsWriper{
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-top: 0px;
 }
-
 .advancedMenuContainer .windowButton{
-  border:none;
+  border: none;
   width: 26px;
-  height:24px;
-  margin-right:13px;
-  border-radius:2px;
-  background-color:transparent;
+  height: 24px;
+  margin-right: 12px;
+  border-radius: 2px;
+  background-color: transparent;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -30,28 +35,69 @@
 .advancedMenuContainer .windowButton:hover{
   background-color:var(--hover-color);
 }
-
+.tabs-container{
+  width: 100%;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 265px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  gap: 1px;
+}
 .tabs-container::-webkit-scrollbar{
   height: 0.2em;
 }
-
 .tabs-container::-webkit-scrollbar-thumb{
-  background-color: green;
+  background-color: transparent;
 }
-
 .tab-close{
   stroke: #444444;
 }
-
 .tabs{
   max-width:265px;
   font-size: 13px;
-  background-color:pink;
   display: grid;
   align-items: center;
   grid-template-columns: 10% 80% 10%;
-  border-right: 1px solid #f0f0f0;
 }
+
+.close-tab-button{
+  width: 20px;
+  height: 20px;
+  margin-right: -40px;
+}
+
+/* @media (max-width: 1530px){
+  .advancedMenuContainer{
+    grid-template-columns: 84% 1fr;
+  }
+} */
+
+@media (min-width: 884px){
+  .advancedMenuContainer{
+    grid-template-columns: 5fr 1fr;
+  }
+}
+
+@media (min-width: 890px){
+  .advancedMenuContainer{
+    grid-template-columns: 6fr 1fr;
+  }
+}
+
+@media (min-width: 925px){
+  .advancedMenuContainer{
+    grid-template-columns: 7fr 2fr;
+  }
+}
+
+@media (min-width: 1081px){
+  .advancedMenuContainer{
+    grid-template-columns: 8fr 2fr;
+  }
+}
+
+/* max-width: 1530px */
 
 /* header nav{
   display: flex;

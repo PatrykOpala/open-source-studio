@@ -5,7 +5,7 @@ class OpenSourceStudio{
   constructor(rootElement){
     this.root = rootElement;
     this.editorMode = "Normal";
-    //this.advancedMenu = new AdvancedMenu(this.root, new Size(this.root.offsetWidth, 30));
+    // this.advancedMenu = new AdvancedMenu(this.root, new Size(this.root.offsetWidth, 30));
   }
 
   init(){
