@@ -13,7 +13,7 @@ const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
     autoHideMenuBar: true,
-    title: "Open Source Studio",
+    title: "Open Source Studio Nightly",
     width: 900,
     height: 600,
     minWidth: 900,

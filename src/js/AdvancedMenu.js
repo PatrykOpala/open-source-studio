@@ -1,4 +1,4 @@
-import {Component, Size} from './Component.js';
+import {Component} from './Component.js';
 import {Tabs} from './Tabs.js';
 
 export class AdvancedMenu extends Component{
@@ -11,21 +11,18 @@ export class AdvancedMenu extends Component{
     document.getElementById("hide-to-menubar").addEventListener("click", this.hideWindow);
     document.getElementById("min-max").addEventListener("click", this.minMaxWindow);
     document.getElementById("close").addEventListener("click", this.closeWindow);
-    window.addEventListener("resize", ()=>{
-      this.resizeAdvancedMenu(this._root.offsetWidth, this.getSize.height);
-    });
+    // window.addEventListener("resize", ()=>{
+    //   this.resizeAdvancedMenu(this._root.offsetWidth, this.getSize.height);
+    // });
   }
 
   resizeAdvancedMenu(newMenuWidth, newMenuHeight){
     const resizeObject = super.resize(newMenuWidth, newMenuHeight);
-    console.log(resizeObject);
-    this.render(this._root, resizeObject);
-    document.getElementById("hide-to-menubar").addEventListener("click",
-     this.hideWindow);
-    document.getElementById("min-max").addEventListener("click",
-    this.minMaxWindow);
-    document.getElementById("close").addEventListener("click",
-    this.closeWindow);
+    if(document.getElementById("advanced-menu-container")){
+      document
+      .getElementById("advanced-menu-container")
+      .style["width"] = `${resizeObject.width}px`;
+    }
   }
 
   render(root, size){
@@ -42,59 +39,37 @@ export class AdvancedMenu extends Component{
     adv_div_2.classList.add("tabs-container");
     adv_div_2.style["height"] = `${size.height}px`;
 
-    adv_div_2.append(Tabs.createTab(size.height), Tabs.createTab(size.height),
-    Tabs.createTab(size.height), Tabs.createTab(size.height),
-    Tabs.createTab(size.height));
+    // adv_div_2.append();
 
     const adv_div_3 = document.createElement("div");
     adv_div_3.classList.add("mag");
 
     const buttonsWriper = document.createElement("div");
     buttonsWriper.classList.add("buttonsWriper");
+    buttonsWriper.innerHTML = `
+    <button class="windowButton" id="l">l</button>
+    <button class="windowButton" id="d">d</button>
+    <button class="windowButton" id="r">r</button>
 
-    const buttonHideToMenubar = document.createElement("button");
-    buttonHideToMenubar.classList.add("windowButton");
-    buttonHideToMenubar.id = "hide-to-menubar";
-    buttonHideToMenubar.innerHTML = `
-    <svg width='24' height='19' viewBox='-3 1 24 19'>
-      <line x1='2' x2='16' y1='13' y2='13' class="icon" stroke-width='1' />
-    </svg>`;
+    <button class="windowButton" id="hide-to-menubar">
+      <svg width='24' height='19' viewBox='-3 1 24 19'>
+        <line x1='2' x2='16' y1='13' y2='13' class="icon" stroke-width='1' />
+      </svg>
+    </button>
 
-    const buttonMinMax = document.createElement("button");
-    buttonMinMax.classList.add("windowButton");
-    buttonMinMax.id = "min-max";
-    buttonMinMax.innerHTML = `
-    <svg width='24' height='17' viewBox="-6 -4.5 24 19">
-      <rect width='12' height='11' class="icon" stroke-width='1' fill='transparent' />
-    </svg>`;
+    <button class="windowButton" id="min-max">
+      <svg width='24' height='17' viewBox="-6 -4.5 24 19">
+        <rect width='12' height='11' class="icon" stroke-width='1' fill='transparent' />
+      </svg>
+    </button>
 
-    const buttonClose = document.createElement("button");
-    buttonClose.classList.add("windowButton");
-    buttonClose.id = "close";
-    buttonClose.innerHTML = `
+    <button class="windowButton" id="close">
       <svg width='24' height='19' viewBox='-2 0.9 24 19'>
         <line x1='4' x2='16' y1='5' y2='16' class="icon" stroke-width='1' />
         <line x1='16' x2='4' y1='5' y2='16' class="icon" stroke-width='1' />
-      </svg>`;
-
-
-
-    const button_layout_left = document.createElement("button");
-    button_layout_left.classList.add("windowButton");
-    button_layout_left.id = "hide-to-menubar";
-    button_layout_left.innerHTML = 'l';
-
-    const button_layout_down = document.createElement("button");
-    button_layout_down.classList.add("windowButton");
-    button_layout_down.id = "min-max";
-    button_layout_down.innerHTML = 'd';
-
-    const button_layout_right = document.createElement("button");
-    button_layout_right.classList.add("windowButton");
-    button_layout_right.id = "close";
-    button_layout_right.innerHTML = 'r';
-
-    buttonsWriper.append(button_layout_left, button_layout_down, button_layout_right, buttonHideToMenubar, buttonMinMax, buttonClose);
+      </svg>
+    </button>
+    `;
 
     adv_div_3.append(buttonsWriper);
 

@@ -61,10 +61,15 @@
   grid-template-columns: 10% 80% 10%;
 }
 
+.tabs:hover{
+  background-color: hsla(30, 9%, 9%, 0.2);
+}
+
 .close-tab-button{
   width: 20px;
   height: 20px;
   margin-right: -40px;
+  margin-bottom: 2px;
 }
 
 /* @media (max-width: 1530px){

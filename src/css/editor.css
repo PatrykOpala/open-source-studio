@@ -1,11 +1,11 @@
-.editorContainer{
+.editor-container{
   width: 100%;
-  height: 90.4vh;
+  height: 94.9vh;
   /* border: 2px solid red; */
   margin-top: 3px;
 }
 
-.countContainer{
+.count-container{
   display: flex;
   flex-direction: column;
   width: 46px;
