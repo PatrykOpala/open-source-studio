@@ -87,3 +87,4 @@ typings/
 
 # Electron-Forge
 out/
+deploy_to_repo.ps1

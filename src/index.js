@@ -1,6 +1,7 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 const child = require("child_process");
 const path = require('path');
+const fs = require('fs');
 
 // console.log(process.argv);
 
@@ -33,12 +34,30 @@ const createWindow = () => {
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
 
   ipcMain.handle("os-openFile", (event, file) => {
-    child.execFile(file, (err, stdout, stderr) => {
-      out = stdout;
+    // console.log(file);
+    fs.readdir(file, (err, data)=>{
+      if(err) console.log(`Error: ${err}`);
+
+      if(data) console.log(`Data: ${data}`);
     });
+
+
+    // child.execFile(file, (err, stdout, stderr) => {
+    //   out = stdout;
+    // });
     // setTimeout(()=>{
     //   mainWindow.webContents.send("json-content", out);
     // }, 1000);
+  });
+
+  ipcMain.handle("os-openFolder", (event, directory) => {
+    fs.readdir(directory, (err, data)=>{
+      if(err) console.log(`Error: ${err}`);
+
+      if(data){
+        mainWindow.webContents.send("openFolderResponse", data);
+      }
+    });
   });
 
   ipcMain.on("os-close", (event, args) => {

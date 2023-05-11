@@ -10,4 +10,8 @@ contextBridge.exposeInMainWorld('mFile', {
   },
   closeProgram: ()=>ipcRenderer.send("os-close"),
   hideProgram: () => ipcRenderer.send("os-hide"),
+  openFolder: (directory, func) => {
+    ipcRenderer.invoke("os-openFolder", directory);
+    ipcRenderer.on("openFolderResponse", (jsonEvent, jsonMessage)=> func(jsonMessage));
+  }
 });

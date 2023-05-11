@@ -1,6 +1,10 @@
 export class FileExplorer{
   constructor(){
+    window.mFile.openFolder("./", (mess)=>{
+      console.log(mess);
+    });
     this.file_explorer_container = null;
+    this.hide = false;
   }
 
   render(root, width, height){
@@ -19,6 +23,16 @@ export class FileExplorer{
     }
     if(height){
       this.file_explorer_container.style['height'] = `${height}px`;
+    }
+  }
+
+  toogle(){
+    if(!this.hide){
+      this.file_explorer_container.style['display'] = "none";
+      this.hide = true;
+    }else{
+      this.file_explorer_container.style['display'] = "block";
+      this.hide = false;
     }
   }
 

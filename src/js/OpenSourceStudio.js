@@ -13,6 +13,7 @@ class OpenSourceStudio{
     this.ADVANCED_MENU_HEIGHT = 30;
     this.width = 0;
     this.height = 0;
+    this.control_key_active = false;
   }
 
   init(){
@@ -27,6 +28,20 @@ class OpenSourceStudio{
       }
       if(this.editor){
         this.editor.resize(this.root.offsetWidth - this.FILE_EXPLORER_WIDTH, null);
+      }
+    });
+    window.addEventListener("keydown", (key_event)=>{
+      if(key_event.key == "Control"){
+        this.control_key_active = true;
+      }
+
+      if(key_event.key == "b" && this.control_key_active){
+        this.file_explorer.toogle();
+      }
+    });
+    window.addEventListener("keyup", (key_event)=>{
+      if(key_event.key == "Control"){
+        this.control_key_active = false;
       }
     });
   }
