@@ -6,14 +6,11 @@ export class AdvancedMenu extends Component{
     super(size);
     this._root = rootElement;
   }
-  initMenu(){
+  init_menu(){
     this.render(this._root, this.getSize);
     document.getElementById("hide-to-menubar").addEventListener("click", this.hideWindow);
     document.getElementById("min-max").addEventListener("click", this.minMaxWindow);
     document.getElementById("close").addEventListener("click", this.closeWindow);
-    // window.addEventListener("resize", ()=>{
-    //   this.resizeAdvancedMenu(this._root.offsetWidth, this.getSize.height);
-    // });
   }
 
   resizeAdvancedMenu(newMenuWidth, newMenuHeight){

@@ -8,7 +8,6 @@ export class Editor{
     this.editor_container.id = "editor_container";
     this.editor_container.style['width'] = `${width}px`;
     this.editor_container.style['height'] = `${height}px`;
-    this.editor_container.style['margin-left'] = "300px";
     this.editor_container.style['background-color'] = "black";
     root.append(this.editor_container);
   }

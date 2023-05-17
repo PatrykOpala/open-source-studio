@@ -10,7 +10,6 @@
   background-color: var(--primary-color);
   display: flex;
   justify-content: center;
-  width: 240px;
 }
 .buttonsWriper{
   display: flex;
