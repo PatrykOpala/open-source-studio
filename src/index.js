@@ -53,7 +53,6 @@ const createWindow = () => {
   ipcMain.handle("os-openFolder", (event, directory) => {
     fs.readdir(directory, (err, data)=>{
       if(err) console.log(`Error: ${err}`);
-
       if(data){
         mainWindow.webContents.send("openFolderResponse", data);
       }

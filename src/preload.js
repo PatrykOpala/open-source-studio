@@ -12,6 +12,8 @@ contextBridge.exposeInMainWorld('mFile', {
   hideProgram: () => ipcRenderer.send("os-hide"),
   openFolder: (directory, func) => {
     ipcRenderer.invoke("os-openFolder", directory);
-    ipcRenderer.on("openFolderResponse", (jsonEvent, jsonMessage)=> func(jsonMessage));
+    ipcRenderer.on("openFolderResponse", (jsonEvent, jsonMessage)=> {
+      func(jsonMessage);  
+    });
   }
 });
