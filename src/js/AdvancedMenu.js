@@ -1,13 +1,13 @@
-import {Component} from './Component.js';
+import {Bounds} from './Bounds.js';
 import {Tabs} from './Tabs.js';
 
-export class AdvancedMenu extends Component{
-  constructor(rootElement, size){
-    super(size);
+export class AdvancedMenu extends Bounds{
+  constructor(rootElement){
+    super();
     this._root = rootElement;
   }
   init_menu(){
-    this.render(this._root, this.getSize);
+    this.render(this._root);
     document.getElementById("hide-to-menubar").addEventListener("click", this.hideWindow);
     document.getElementById("min-max").addEventListener("click", this.minMaxWindow);
     document.getElementById("close").addEventListener("click", this.closeWindow);
@@ -22,19 +22,19 @@ export class AdvancedMenu extends Component{
     }
   }
 
-  render(root, size){
+  render(root){
     if(document.getElementById("advanced-menu-container")){
       document.getElementById("advanced-menu-container").remove();
     }
     const advancedContainer = document.createElement("div");
     advancedContainer.id = "advanced-menu-container";
     advancedContainer.classList.add("advancedMenuContainer");
-    advancedContainer.style["height"] = `${size.height}px`;
+    advancedContainer.style["height"] = `${this.getHeight()}px`;
 
     const adv_div_2 = document.createElement("div");
     adv_div_2.id = "card-container";
     adv_div_2.classList.add("tabs-container");
-    adv_div_2.style["height"] = `${size.height}px`;
+    adv_div_2.style["height"] = `${this.getHeight()}px`;
 
     // adv_div_2.append();
 

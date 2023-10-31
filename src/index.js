@@ -26,7 +26,10 @@ const createWindow = () => {
       webgl: false,
       contextIzolation: true,
       nodeIntegration: false,
-      disableBlinkFeatures: 'BarcodeDetector, BlinkExtensionChromeOS, BlinkExtensionChromeOSHID, BlinkExtensionChromeOSWindowManagement, BlinkRuntimeCallStats, CacheStorageCodeCacheHint, ContactsManager, ContactsManagerExtraProperties, ContentIndex, Database, InstalledApp, PaymentApp, PaymentMethodChangeEvent, PaymentRequest, PaymentRequestMerchantValidationEvent, Permissions, DesktopPWAsSubApps, DeviceAttributes, DeviceOrientationRequestPermission, DevicePosture, DocumentCookie, DocumentPictureInPictureAPI, EarlyHintsPreloadForNavigationOptIn, EyeDropperAPI, FaceDetector, FakeNoAllocDirectCallForTesting, FeaturePolicyReporting, FedCm, FedCmIdpSigninStatus, FedCmIdpSignout, FedCmIframeSupport, FedCmLoginHint, FedCmMultipleIdentityProviders, FedCmRpContext, FedCmSelectiveDisclosure, FedCmUserInfo, FencedFrames, FencedFramesAPIChanges, IncomingCallNotifications, InstalledApp, MachineLearningCommon, MachineLearningModelLoader, MachineLearningNeuralNetwork, NotificationContentImage, Notifications, NotificationTriggers, PasswordReveal, PaymentInstruments'
+      enableRemoteModule: false,
+      sandbox: true,
+      worldSafeExecuteJavaScript: true,
+      disableBlinkFeatures: 'BarcodeDetector, BlinkExtensionChromeOS, BlinkExtensionChromeOSHID, BlinkExtensionChromeOSWindowManagement, BlinkRuntimeCallStats, CacheStorageCodeCacheHint, ContactsManager, ContactsManagerExtraProperties, ContentIndex, Database, InstalledApp, PaymentApp, PaymentMethodChangeEvent, PaymentRequest, PaymentRequestMerchantValidationEvent, Permissions, DesktopPWAsSubApps, DeviceAttributes, DeviceOrientationRequestPermission, DevicePosture, DocumentCookie, DocumentPictureInPictureAPI, EarlyHintsPreloadForNavigationOptIn, EyeDropperAPI, FaceDetector, FakeNoAllocDirectCallForTesting, FeaturePolicyReporting, FedCm, FedCmIdpSigninStatus, FedCmIdpSignout, FedCmIframeSupport, FedCmLoginHint, FedCmMultipleIdentityProviders, FedCmRpContext, FedCmSelectiveDisclosure, FedCmUserInfo, FencedFrames, FencedFramesAPIChanges, IncomingCallNotifications, InstalledApp, MachineLearningCommon, MachineLearningModelLoader, MachineLearningNeuralNetwork, NotificationContentImage, Notifications, NotificationTriggers, PasswordReveal, PaymentInstruments, Auxclick'
     },
   });
 
